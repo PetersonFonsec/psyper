@@ -89,11 +89,12 @@ export class User {
     public findById = async ( req:User_Request, res:Response ) => {
         try {
             
-            const { id } = req.body
+            const { id } = req.params
 
-            const result = await User_Schema.findById(req)
+            const result = await User_Schema.findById(id)
 
             return res.status(200).send({ result })
+
         }catch(error){
             return res.status(401).send({ error })
         }
@@ -102,11 +103,12 @@ export class User {
     public update = async ( req:User_Request, res:Response ) => {
         try {
             
-            const { id: _id } = req.body
+            const { id: _id } = req.params
 
             const result = await User_Schema.updateOne( { _id }, req.body )
 
             return res.status(200).send({ result })
+
         }catch(error){
 
             return res.status(401).send({ error })
@@ -116,11 +118,12 @@ export class User {
     public delete = async  ( req:User_Request, res:Response ) => {
         try {
             
-            const { id } = req.body
+            const { id } = req.params
 
             const result = await User_Schema.findByIdAndDelete(id)
 
             return res.status(200).send({ result })
+
         }catch(error){
 
             return res.status(401).send({ error })
