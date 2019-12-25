@@ -1,23 +1,23 @@
 import { Schema, Document, model } from 'mongoose'
 
-interface Consultatiton extends Document {
-    psichologist: String,
-    patient: String,
+export interface Query_Model extends Document {
     day: Number,
-    month: Number,
-    years: Number,
-    hour: Number,
     duration: Number
+    hour: Number,
+    month: Number,
+    patient: string,
+    profissional: string,
+    years: Number,
 }
 
 const schema = new Schema({
-    psichologist: {
+    profissional: {
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'Profissional'
     },
     patient: {
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'patient'
     },
     day: {
         type: Number,
@@ -27,7 +27,7 @@ const schema = new Schema({
         type: Number,
         require: true
     },
-    years: {
+    year: {
         type: Number,
         require: true
     },
@@ -41,4 +41,4 @@ const schema = new Schema({
     }
 })
 
-export default model<Consultatiton>('Consultatiton',schema)
+export default model<Query_Model>('Query',schema)

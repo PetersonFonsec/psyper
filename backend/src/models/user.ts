@@ -1,10 +1,12 @@
 import { Schema, Document, model } from 'mongoose'
 
-interface User_Model extends Document {
-    name ?: String,
-    avatar ?: String,
-    password ?: String,
-    email ?: String
+export interface User_Model extends Document {
+    avatar ?: string,
+    cpf : string,
+    name : string,
+    email : string,
+    password : string,
+    telephone: string
 }
 
 const schema = new Schema({
@@ -16,11 +18,6 @@ const schema = new Schema({
         type: String,
         default: 'avatar-default'
     },
-    password:{
-        type: String,
-        select: false,
-        required: true
-    },
     cpf:{
         type: String,
         unique: true,
@@ -31,14 +28,14 @@ const schema = new Schema({
         unique: true,
         required: true
     },
+    password:{
+        type: String,
+        select: false,
+        required: true
+    },
     telephone:{
         type: String,
         unique: true,
-    },
-    psichologist:{
-        type: Boolean,
-        unique: true,
-        required: true
     }
 })
 

@@ -1,5 +1,6 @@
-import * as Express from "express"
 import * as Cors from "cors"
+import * as Express from "express"
+import * as Compression from "compression"
 import * as Helmet from "helmet"
 import { json, urlencoded } from "body-parser"
 
@@ -15,6 +16,7 @@ class Server {
 
     middlewares(){
         this.express.use(Cors())
+        this.express.use(Compression())
         this.express.use(Helmet())
         this.express.use(json())
         this.express.use(urlencoded({ extended: true }))
