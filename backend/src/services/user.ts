@@ -64,7 +64,7 @@ export class User {
         }
     }
 
-    public listAll = async ( req:User_Request, res:Response ) => {
+    public findAll = async ( req:User_Request, res:Response ) => {
         try {
             const result = await User_Schema.find()
 

@@ -78,6 +78,39 @@ export class Profissional {
         }
     }
 
+    public update = async ( req:Pacient_Request, res:Response ) => {
+
+        try {
+
+            const { id } = req.params
+    
+            const { user, categorie, CRP } = req.body
+
+            if( user ) delete req.body.user
+
+            if( !id )
+                return res.status(401).send({ error: "profissional não informado" })
+
+            const userExist = await User_Schema.findById(id)
+
+            if( !userExist )
+                return res.status(401).send({ error: "profissional não encontrado" })
+
+            if( !userExist )
+                return res.status(401).send({ error: "profissional não encontrado" })
+
+            if( categorie === 'psicologo' && !CRP )
+                return res.status(401).send({ error: "todo psicologo deve te CRP" })
+
+            const result = await Profissional_Schema.findByIdAndUpdate( id, req.body )
+
+            return res.status(200).send({ result })
+
+        }catch(error){
+            return res.status(401).send({ error })
+        }
+    }
+
     public delete = async ( req:Pacient_Request, res:Response ) => {
 
         try {

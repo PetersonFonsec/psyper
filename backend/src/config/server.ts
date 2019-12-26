@@ -3,6 +3,8 @@ import * as Cors from "cors"
 import * as Express from "express"
 import * as Helmet from "helmet"
 import * as Morgan from "morgan"
+import Profissional_Route from "../routes/profissional"
+import User_Route from "../routes/user"
 import Logger from "../config/winston"
 import { json, urlencoded } from "body-parser"
 
@@ -30,9 +32,9 @@ class Server {
     }
 
     routes(){
-
+        this.express.use( Profissional_Route )
+        this.express.use( User_Route )
     }
-
 }
 
 export default new Server().express
