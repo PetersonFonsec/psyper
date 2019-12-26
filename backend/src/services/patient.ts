@@ -31,7 +31,7 @@ export class Pacient {
 
             const result = await Pacient_Schema.find()
 
-            return res.status(401).send({ result })
+            return res.status(200).send({ result })
 
         }catch(error){
             return res.status(401).send({ error })
@@ -46,7 +46,7 @@ export class Pacient {
 
             const result = await Pacient_Schema.findById(id)
 
-            return res.status(401).send({ result })
+            return res.status(200).send({ result })
 
         }catch(error){
             return res.status(401).send({ error })

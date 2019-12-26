@@ -1,13 +1,17 @@
 import { Schema, Document, model } from 'mongoose'
 
+export enum Profissional_Categorie {
+    coach = 'coach',
+    psicologo = 'psicologo',
+    terapeuta = 'terapeuta',
+    psicanalista = 'psicanalista' 
+}
+
 export interface Profissional_Model extends Document {
-    categorie: string,
+    categorie: Profissional_Categorie,
     CRP: string,
-    dia: number,
     description: string,
-    pacient: string,
-    profissional: string,
-    schedule: string
+    price: number,
     user: string,
 }
 
@@ -26,10 +30,6 @@ const schema = new Schema({
     },
     price: {
         type: Number,
-        require: true
-    },
-    schedule: {
-        type: String,
         require: true
     },
     user: {
