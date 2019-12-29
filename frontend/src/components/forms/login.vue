@@ -9,7 +9,7 @@
       <InputText _label="Senha" _id="user-senha" />
     </div>
 
-    <Button> entrar </Button>
+    <Button color="danger" size="md" _type="submit"> entrar </Button>
   </form>
 </template>
 
@@ -32,7 +32,9 @@ export default {
     email(value) {
       this.valueEmail = value;
     },
-    _submit() {}
+    _submit() {
+      console.log("submit");
+    }
   }
 };
 </script>

@@ -1,14 +1,17 @@
 
 //color themes
-$theme-calm-blue: #A6FFCB;
-$theme-blue: #12D8FA;
-$theme-strong-blue: #1FA2FF;
 
 //colors
-$color-primary: 768;
-$color-danger: 992;
-$color-dark: 1200;
-$color-light: 1200;
+$color-black: #000;
+$color-white: #fff;
+
+$color-info: #17a2b8;
+$color-danger: #dc3545;
+$color-dark: #343a40;
+$color-light: #f8f9fa;
+$color-warning: #ffc107;
+$color-success: #28a745;
+$color-primary: #007bff;
 
 //size
 $size-sm: 768;
@@ -16,6 +19,9 @@ $size-md: 992;
 $size-lg: 1200;
 
 //path 
-$path-fonts: "../../fonts";
+$path-fonts: "~@/fonts";
 $path-font-nunito: "#{$path-fonts}/nunito";
-$path-font-icomoon: "#{$path-fonts}/icomoon"
+$path-font-icomoon: "#{$path-fonts}/icomoon";
+
+//path 
+$font-nunito: 'Nunito', sans-serif;

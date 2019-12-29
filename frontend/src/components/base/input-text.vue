@@ -1,6 +1,6 @@
 <template>
-  <div class="input-text">
-    <label class="input-text__label" :for="_id">
+  <div class="input">
+    <label class="input__label" :for="_id">
       {{ _label }}
     </label>
 
@@ -9,7 +9,7 @@
       :id="_id"
       :placeholder="_placeholder"
       v-model="value"
-      class="input-text__input"
+      class="input__text"
     />
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
   },
   data() {
     return {
-        value: ""
+      value: ""
     };
   },
   methods: {
@@ -42,3 +42,36 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+
+@import "../../sass/base/index";
+.input {
+  border: none;
+  border-radius: 5px;
+  font-family: $font-nunito;
+  font-weight: 600;
+
+  //border radius
+  &--radio-md {
+    border-radius: 10px;
+  }
+
+  &--radio-lg {
+    border-radius: 25px;
+  }
+
+  //size
+  &--sm {
+    padding: 5px;
+  }
+
+  &--md {
+    padding: 10px;
+  }
+
+  &--lg {
+    padding: 15px;
+  }
+}
+</style>
