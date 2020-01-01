@@ -4,7 +4,6 @@
     class="button"
     :class="
       `
-        button--radio${radio}
         button--${color}
         button--${size}
     `

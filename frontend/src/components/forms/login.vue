@@ -13,6 +13,12 @@
       <InputPasswod _label="Senha" _id="user-senha" _placeholder="Senha" />
     </div>
 
+    <div>
+      <InputSelect _label="estado" _id="user-estado" _placeholder="estado">
+        <option> oprion 1 </option>
+      </InputSelect>
+    </div>
+
     <Button color="danger" size="md" _type="submit"> entrar </Button>
   </form>
 </template>
@@ -20,6 +26,7 @@
 <script>
 import InputText from "../base/input-text";
 import InputPasswod from "../base/input-password";
+import InputSelect from "../base/input-select";
 import Button from "../base/button";
 
 export default {
@@ -27,6 +34,7 @@ export default {
   components: {
     InputText,
     InputPasswod,
+    InputSelect,
     Button
   },
   data() {
@@ -45,4 +53,6 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="scss" scoped>
+@import "../../sass/input";
+</style>

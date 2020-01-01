@@ -1,15 +1,10 @@
 <template>
-  <div class="input-select">
-    <label class="input-select__label" :for="_id">
-      {{ _label }}
-    </label>
+  <div :id="_id" class="select">
+    <label> {{ _label }} </label>
 
-    <select
-      @input="onChange"
-      :id="_id"
-      :placeholder="_placeholder"
-      class="input-select__input"
-    >
+    <select>
+      <option selected>{{ _placeholder }}</option>
+      <slot></slot>
     </select>
   </div>
 </template>
@@ -27,13 +22,13 @@ export default {
       type: String
     },
     _placeholder: {
+      require: true,
       type: String
-    }
-  },
-  methods: {
-    onChange(value) {
-      return this.$emit("value", value);
     }
   }
 };
 </script>
+
+<style lang="scss" scoped>
+@import "../../sass/select";
+</style>

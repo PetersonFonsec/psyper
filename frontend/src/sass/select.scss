@@ -1,0 +1,47 @@
+@import "../../sass/base/index";
+
+.select {
+    display: inline-block;
+    font-family: $font-nunito;
+    position: relative;
+    width: 100%;
+}
+
+.select label {
+    display: block;
+    font-size: 18px;
+}
+
+select {
+    display: inline-block;
+    font-family: $font-nunito;
+    width: 100%;
+    margin: 0;
+    padding: .5rem 2.25rem .5rem 1rem;
+    line-height: 1.5;
+    background-color: #fff;
+    border: 1px solid $color-gray;
+    border-radius: .25rem;
+    font-size: 18px;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.select:after {
+  position: absolute;
+  top: 70%;
+  right: 1.25rem;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  margin-top: -.15rem;
+  pointer-events: none;
+  border: .35rem solid;
+  border-right: .35rem solid transparent;
+  border-bottom: .35rem solid transparent;
+  border-left: .35rem solid transparent;
+}
