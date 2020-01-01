@@ -1,6 +1,6 @@
 <template>
-  <div class="input-text">
-    <label class="input-text__label" :for="_id">
+  <div class="input">
+    <label class="input__label" :for="_id">
       {{ _label }}
     </label>
 
@@ -8,14 +8,19 @@
       @input="onInput"
       :id="_id"
       :placeholder="_placeholder"
-      class="input-text__input"
+      v-model="value"
+      :type="type"
     />
+
+    <span class="input__icon">
+      <i @click="togglePassword" :class="icon"></i>
+    </span>
   </div>
 </template>
 
 <script>
 export default {
-  name: "InputText",
+  name: "InputPassword",
   props: {
     _label: {
       require: true,
@@ -25,14 +30,39 @@ export default {
       require: true,
       type: String
     },
+    _type: {
+      type: String,
+      default: () => "text"
+    },
     _placeholder: {
       type: String
     }
   },
+  data() {
+    return {
+      showPassword: false,
+      value: ""
+    };
+  },
+  computed: {
+    icon() {
+      return this.showPassword ? "icon-eye-open" : "icon-eye-close";
+    },
+    type() {
+      return this.showPassword ? "text" : "password";
+    }
+  },
   methods: {
-    onInput(value) {
-      return this.$emit("value", value);
+    onInput() {
+      return this.$emit("onInput", this.value);
+    },
+    togglePassword() {
+      return (this.showPassword = !this.showPassword);
     }
   }
 };
 </script>
+
+<style lang="scss" scoped>
+@import "../../sass/input";
+</style>

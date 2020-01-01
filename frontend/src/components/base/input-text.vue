@@ -9,7 +9,6 @@
       :id="_id"
       :placeholder="_placeholder"
       v-model="value"
-      class="input__text"
     />
   </div>
 </template>
@@ -44,26 +43,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../sass/base/index";
-.input {
-  font-family: $font-nunito;
-
-  &__label {
-    display: block;
-    font-size: 18px;
-  }
-
-  &__text {
-    border-radius: 3px;
-    border: 1px solid #bcbcbc;
-    font-size: 18px;
-    height: 40px;
-    padding-left: 15px;
-    outline: none;
-  }
-
-  &::placeholder {
-    color: #858585;
-  }
-}
+@import "../../sass/input";
 </style>

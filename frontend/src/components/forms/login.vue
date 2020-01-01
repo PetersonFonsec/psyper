@@ -10,7 +10,7 @@
     </div>
 
     <div>
-      <InputText _label="Senha" _id="user-senha" _placeholder="Senha" />
+      <InputPasswod _label="Senha" _id="user-senha" _placeholder="Senha" />
     </div>
 
     <Button color="danger" size="md" _type="submit"> entrar </Button>
@@ -19,12 +19,14 @@
 
 <script>
 import InputText from "../base/input-text";
+import InputPasswod from "../base/input-password";
 import Button from "../base/button";
 
 export default {
   name: "FormLogin",
   components: {
     InputText,
+    InputPasswod,
     Button
   },
   data() {
