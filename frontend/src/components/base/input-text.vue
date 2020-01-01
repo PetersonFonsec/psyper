@@ -44,34 +44,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 @import "../../sass/base/index";
 .input {
-  border: none;
-  border-radius: 5px;
   font-family: $font-nunito;
-  font-weight: 600;
 
-  //border radius
-  &--radio-md {
-    border-radius: 10px;
+  &__label {
+    display: block;
+    font-size: 18px;
   }
 
-  &--radio-lg {
-    border-radius: 25px;
+  &__text {
+    border-radius: 3px;
+    border: 1px solid #bcbcbc;
+    font-size: 18px;
+    height: 40px;
+    padding-left: 15px;
+    outline: none;
   }
 
-  //size
-  &--sm {
-    padding: 5px;
-  }
-
-  &--md {
-    padding: 10px;
-  }
-
-  &--lg {
-    padding: 15px;
+  &::placeholder {
+    color: #858585;
   }
 }
 </style>

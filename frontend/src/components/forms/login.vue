@@ -1,12 +1,16 @@
 <template>
   <form @submit.prevent="_submit" class="form-login">
     <div>
-      <InputText _label="Email" @onInput="email" _id="user-email" />
-      {{ valueEmail }}
+      <InputText
+        _label="Email"
+        @onInput="email"
+        _id="user-email"
+        _placeholder="insira seu email"
+      />
     </div>
 
     <div>
-      <InputText _label="Senha" _id="user-senha" />
+      <InputText _label="Senha" _id="user-senha" _placeholder="Senha" />
     </div>
 
     <Button color="danger" size="md" _type="submit"> entrar </Button>
